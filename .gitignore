@@ -1,0 +1,15 @@
+.DS_Store
+.idea
+.vscode
+build
+coverage
+npm-debug*
+out
+yarn-debug*
+yarn-error*
+.next
+dest
+local-code
+.idea/workspace.xml
+.cache
+node_modules/*
