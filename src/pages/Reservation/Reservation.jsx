@@ -12,7 +12,7 @@ const Reservation = () => {
     const [phone, setPhone] = useState('');
     const [step, setStep] = useState(1);
     const [errors, setErrors] = useState({});
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     const [success, setSuccess] = useState(false);
 
     const openingTime = '09:00';
@@ -26,38 +26,44 @@ const Reservation = () => {
             } else if (step === 2) {
                 setStep(3);
             } else if (step === 3) {
-                try {
-                    const response = await fetch('https://your-api-url.com/reservations', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify({ date, time, guests, occasion, firstName, lastName, phone })
-                    });
+                // try {
+                //     const response = await fetch('https://your-api-url.com/reservations', {
+                //         method: 'POST',
+                //         headers: {
+                //             'Content-Type': 'application/json'
+                //         },
+                //         body: JSON.stringify({ date, time, guests, occasion, firstName, lastName, phone })
+                //     });
 
-                    if (response.ok) {
-                        console.log('Reservation submitted:', { date, time, guests, occasion, firstName, lastName, phone });
-                        setSuccess(true);
-                        setTimeout(() => {
-                            setSuccess(false);
-                            navigate('/')
-                        }, 2000);
-                    } else {
-                        // console.error('Failed to submit reservation');
-                        setSuccess(true);
-                        setTimeout(() => {
-                            setSuccess(false);
-                            navigate('/')
-                        }, 2000);
-                    }
-                } catch (error) {
-                    console.error('Error:', error);
-                    setSuccess(true);
-                    setTimeout(() => {
-                        setSuccess(false);
-                        navigate('/')
-                    }, 2000);
-                }
+                //     if (response.ok) {
+                //         console.log('Reservation submitted:', { date, time, guests, occasion, firstName, lastName, phone });
+                //         setSuccess(true);
+                //         setTimeout(() => {
+                //             setSuccess(false);
+                //             navigate('/')
+                //         }, 2000);
+                //     } else {
+                //         // console.error('Failed to submit reservation');
+                //         setSuccess(true);
+                //         setTimeout(() => {
+                //             setSuccess(false);
+                //             navigate('/')
+                //         }, 2000);
+                //     }
+                // } catch (error) {
+                //     console.error('Error:', error);
+                //     setSuccess(true);
+                //     setTimeout(() => {
+                //         setSuccess(false);
+                //         navigate('/')
+                //     }, 2000);
+                // }
+                console.log('Reservation submitted successfully!', { date, time, guests, occasion, firstName, lastName, phone });
+                setSuccess(true);
+                setTimeout(() => {
+                    setSuccess(false);
+                    // navigate('/')
+                }, 2000);
             }
         } else {
             setErrors(validationErrors);
@@ -86,6 +92,10 @@ const Reservation = () => {
 
         if (!guests) {
             errors.guests = 'Number of guests is required.';
+        } else {
+            if (guests < 1) {
+                errors.time = 'Number of guests is required.';
+            }
         }
 
         if (step === 2) {

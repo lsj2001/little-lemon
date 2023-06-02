@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import HomePage from "./pages/Home/Home";
-import Reservation from "./pages/Reservation/Reservation";
+import Home from "./pages/Home/Home.jsx";
+import Reservation from "./pages/Reservation/Reservation.jsx";
 import Layout from "./components/Layout/Layout";
 
 const Router = () => {
@@ -9,7 +9,7 @@ const Router = () => {
     <BrowserRouter>
       <Routes>
         <Route element={<Layout />}>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<Home />} />
           <Route path="/reservation" element={<Reservation />} />
         </Route>
       </Routes>
