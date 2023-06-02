@@ -99,3 +99,25 @@ button[type="submit"],
 button[type="submit"]:hover {
   background-color: #555;
 }
+
+@media (max-width: 767px) {
+  input[type="date"],
+  input[type="time"],
+  input[type="number"],
+  input[type="text"],
+  .select-container {
+    width: 70%;
+    margin: 20px auto;
+  }
+
+  .button-container {
+    width: 70%;
+    margin: 20px auto;
+  }
+
+  button[type="submit"],
+  [type="button"] {
+    width: 70%;
+    margin: 0px auto;
+  }
+}

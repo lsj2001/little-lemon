@@ -1,22 +1,20 @@
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px;
-  background-color: #f2f2f2;
+/* Header.css */
+
+@media (max-width: 767px) {
+    display: block;
+  }
+
+  .header-desktop {
+    display: none;
+  }
 }
 
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-}
+@media (min-width: 768px) {
+  .header-mobile {
+    display: none;
+  }
 
-.menu ul {
-  list-style-type: none;
-  display: flex;
-  gap: 20px;
-}
-
-.menu li {
-  cursor: pointer;
+  .header-desktop {
+    display: block;
+  }
 }

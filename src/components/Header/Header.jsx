@@ -1,26 +1,16 @@
-import React from 'react';
 import './Header.css';
-import logo from '../../assets/Logo.svg';
-import { Link } from "react-router-dom";
+import MobileHeader from './MobileHeader';
+import DesktopHeader from './DesktopHeader';
 
 const Header = () => {
     return (
         <header>
-            <div className="logo">
-                <Link to="/" >
-                    <img src={logo} alt="Logo" />
-                </Link>
+            <div className="header-mobile">
+                <MobileHeader />
             </div>
-            <nav className="menu">
-                <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Menu</li>
-                    <Link to="/reservation"><li>Reservations</li></Link>
-                    <li>Order Online</li>
-                    <li>Login</li>
-                </ul>
-            </nav>
+            <div className="header-desktop">
+                <DesktopHeader />
+            </div>
         </header>
     );
 };
