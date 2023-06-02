@@ -1,6 +1,7 @@
 /* Header.css */
 
 @media (max-width: 767px) {
+  .header-mobile {
     display: block;
   }
 
